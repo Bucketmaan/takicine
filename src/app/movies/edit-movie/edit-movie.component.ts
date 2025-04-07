@@ -7,7 +7,8 @@ import {DatePipe, formatDate, getLocaleDateFormat} from '@angular/common';
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {createFutureDateValidator, createOnlyUppercaseValidator} from "../customValidators";
 
-import { MessageService } from 'primeng/api';
+import {MessageService} from 'primeng/api';
+
 @Component({
     selector: 'app-edit-movie',
     standalone: true,
@@ -48,22 +49,23 @@ export class EditMovieComponent {
     }
 
     public editMovie(): void {
-        console.log(this.movieForm.value.releaseDate);
         this.movie.title = this.movieForm.value.title!;
         this.movie.director = this.movieForm.value.director!;
         this.movie.synopsis = this.movieForm.value.synopsis!;
         this.movie.releaseDate = new Date(Date.parse(this.movieForm.value.releaseDate!));
+        console.log(this.movie);
 
         this.moviesService.editMovie(this.movie!)
             .pipe(takeUntilDestroyed(this.destroyRef))
             .subscribe(() => {
-              this.showSuccess();
-              this.router.navigate(['/movies'])
+                this.showSuccess();
+                this.router.navigate(['/movies'])
             });
 
     }
-  private showSuccess() {
-    this.messageService.add({ severity: 'info', summary: ':)', detail: 'Film modifié!' });
-  }
+
+    private showSuccess() {
+        this.messageService.add({severity: 'info', summary: ':)', detail: 'Film modifié!'});
+    }
 }
 
