@@ -2,11 +2,12 @@
 <img src="https://allocine.takima.dev/assets/Horror%20on%20Halloween.png" alt="">
 
 <ng-container *ngIf="(movies$ | async) as movies">
+  <h1 class="section-title">A l'affiche</h1>
   <p-carousel
     [value]="movies ?? []"
-    [numVisible]="5"
-    [numScroll]="1"
-    [circular]="true"
+    [numVisible]="4"
+    [numScroll]="4"
+    [circular]="false"
     [responsiveOptions]="responsiveOptions"
   >
     <ng-template let-movie pTemplate="item">

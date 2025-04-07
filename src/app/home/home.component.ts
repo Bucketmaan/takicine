@@ -5,15 +5,12 @@ import { Movie } from '../models/movie';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { MovieComponent } from './movie/movie.component';
 import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'primeng/carousel';
-import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [AsyncPipe, DatePipe, MovieComponent, RouterLink, CommonModule, NgbCarouselModule, CarouselModule, ButtonModule],
+  imports: [AsyncPipe, DatePipe, MovieComponent, RouterLink, CarouselModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
