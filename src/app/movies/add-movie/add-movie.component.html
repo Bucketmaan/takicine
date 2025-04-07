@@ -1,30 +1,27 @@
 <div>
-    <h1>Nouveau film</h1>
-    <form name="form">
-    <div class="d-flex flex-column">
-       
-        <label for="title">Titre</label>
-        <input required type="text" id="title" name="title" [(ngModel)]="movie.title"/>
-    </div>
-    <div class="d-flex flex-column">
-        <label for="title">Realisateur</label>
-        <input  type="text" id="director" name="director" [(ngModel)]="movie.director"/>
-    </div>
-    <div class="d-flex flex-column">
-        <label for="title">Date de sortie</label>
-        <input required type="date" id="date" name="date" [(ngModel)]="movie.releaseDate"/>
-    </div>
-    <div class="d-flex flex-column">
-        <label for="title">Synopsis</label>
-        <input  required ng-minlength="30" type="text" id="sysnopsis" name="sysnopsis" [(ngModel)]="movie.synopsis"/>
-       
-    </div>
-    <div class="d-flex flex-column">
-        <label for="title">Note</label>
-        <input  required type="text" id="rate" name="rate" [(ngModel)]="movie.rate"/>
-    </div>
-   </form>
-    <button class="btn btn-warning" (click)="addMovie()">Ajouter</button>   
-    <button class="btn btn-secondary gobackButton"><a class="goBack" routerLink="/movies">Retour</a></button>
-
+    <h1>Ajouter un film</h1>
+    <form id="movieForm" name="form" [formGroup]="movieForm">
+        <div class="d-flex flex-column " [formGroup]="movieForm">
+            <label for="title">Titre</label>
+            <input type="text" id="title" name="title" [formControlName]="'title'"/>
+        </div>
+        <div class="d-flex flex-column" [formGroup]="movieForm">
+            <label for="title">Realisateur</label>
+            <input type="text" id="director" name="director" [formControlName]="'director'"/>
+        </div>
+        <div class="d-flex flex-column " [formGroup]="movieForm">
+            <label for="title">Date de sortie</label>
+            <input type="date" id="date" name="date" [formControlName]="'releaseDate'"/>
+        </div>
+        <div class="d-flex flex-column " [formGroup]="movieForm">
+            <label for="title">Synopsis</label>
+            <input type="text" id="synopsis" name="synopsis" [formControlName]="'synopsis'"/>
+        </div>
+        <div class="d-flex flex-column " [formGroup]="movieForm">
+            <label for="title">Note</label>
+            <input type="number" min="0" max="5" id="rating" name="rating" [formControlName]="'rating'"/>
+        </div>
+        <button class="btn btn-warning" (click)="addMovie()" [disabled]="!movieForm.valid">Ajouter</button>
+        <button class="btn btn-secondary goBack" routerLink="/movies">Retour</button>
+    </form>
 </div>
