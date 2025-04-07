@@ -11,7 +11,7 @@ import {MessageService} from 'primeng/api';
 @Component({
     selector: 'app-add-movie',
     standalone: true,
-    imports: [FormsModule, RouterLink, ToastModule],
+    imports: [FormsModule, RouterLink, ToastModule, ReactiveFormsModule],
     templateUrl: './add-movie.component.html',
     styleUrl: './add-movie.component.scss'
 })
@@ -51,14 +51,5 @@ export class AddMovieComponent {
     private showSuccess() {
         this.messageService.add({severity: 'success', summary: 'Bravo', detail: 'Film ajouté!'});
     }
-
-}
-
-interface IMovieForm {
-    title: FormControl<string>;
-    director: FormControl<string>;
-    synopsis: FormControl<string>;
-    rating: FormControl<number | undefined>;
-    releaseDate: FormControl<Date>;
 
 }
