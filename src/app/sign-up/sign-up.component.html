@@ -1,0 +1,37 @@
+<div>
+    <h1>Nouveau venu?</h1>
+    <form #form="ngForm" name="form">
+        <div class="d-flex flex-column">
+
+            <label for="title">FirstName</label>
+            <input required type="text" id="title" name="firstName" [(ngModel)]="user.firstName"/>
+        </div>
+        <div class="d-flex flex-column">
+            <label for="title">LastName</label>
+            <input  type="text" id="lastName" name="lastName" [(ngModel)]="user.lastName"/>
+        </div>
+        <div class="d-flex flex-column">
+            <label for="title">Your Age</label>
+            <input required type="number" min="13" max="99" id="age" name="age" [(ngModel)]="user.age"/>
+        </div>
+        <div class="d-flex flex-column">
+            <label for="title">Mail</label>
+            <input  required type="email" id="email" name="email" [(ngModel)]="user.email"/>
+
+        </div>
+        <div class="d-flex flex-column">
+            <label for="title">Password</label>
+            <input  required type="password" id="pass" name="password" [(ngModel)]="user.password"/>
+        </div>
+        <div class="d-flex flex-column">
+            <label for="title">Repeat your password</label>
+            <input  required type="password" id="repeat-password" name="repeat-password" [(ngModel)]="ConfirmPassword"/>
+        </div>
+        <div *ngIf="user.password && ConfirmPassword && user.password !== ConfirmPassword" class="text-danger">
+            Les mots de passe ne correspondent pas.
+        </div>
+    </form>
+    <button type="submit" [disabled]="form.invalid || user.password !== ConfirmPassword" class="btn btn-warning"  routerLink="/">Créer</button>
+    <button class="btn btn-secondary gobackButton"><a class="goBack" routerLink="/">Retour</a></button>
+
+</div>
