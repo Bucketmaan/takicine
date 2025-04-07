@@ -27,7 +27,7 @@ export function createFutureDateValidator(): ValidatorFn {
         }
 
         const dateInFuture = value.getTime() > Date.now();
-        console.log(value.getTime(), Date.now(), dateInFuture);
+        // console.log(value.getTime(), Date.now(), dateInFuture);
 
         return dateInFuture ? null : {error: true};
     }

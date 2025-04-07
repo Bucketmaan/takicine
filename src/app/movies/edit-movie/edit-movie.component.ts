@@ -1,9 +1,9 @@
-import {Component, DestroyRef, inject, Input} from '@angular/core';
+import {Component, DestroyRef, Inject, inject, Input, LOCALE_ID} from '@angular/core';
 import {FormBuilder, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {Movie} from '../../models/movie';
 import {Router, RouterLink} from '@angular/router';
 import {MoviesService} from '../../services/movies.service';
-import {DatePipe} from '@angular/common';
+import {DatePipe, formatDate, getLocaleDateFormat} from '@angular/common';
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {createFutureDateValidator, createOnlyUppercaseValidator} from "../customValidators";
 
@@ -21,9 +21,9 @@ export class EditMovieComponent {
     private readonly router = inject(Router);
     public moviesService = inject(MoviesService);
     private formBuilder = inject(FormBuilder);
+    private locale: string = inject(LOCALE_ID);
+    private movie: Movie = {} as Movie;
     private readonly messageService = inject(MessageService);
-
-    movie: Movie = {} as Movie;
 
     movieForm = this.formBuilder.group({
         title: ['', [Validators.required, createOnlyUppercaseValidator()]],
@@ -40,7 +40,7 @@ export class EditMovieComponent {
                 this.movie = movie;
                 this.movieForm.setValue({
                     title: movie.title,
-                    releaseDate: movie.releaseDate.toString(),
+                    releaseDate: formatDate(movie.releaseDate, 'yyyy-MM-dd', this.locale),
                     synopsis: movie.synopsis,
                     director: movie.director
                 });

@@ -7,18 +7,15 @@
         </div>
         <div class="d-flex flex-column" [formGroup]="movieForm">
             <label for="title">Realisateur</label>
-            <input type="text" id="director" name="director" [formControlName]="'director'"
-                   [value]="movie.director"/>
+            <input type="text" id="director" name="director" [formControlName]="'director'"/>
         </div>
         <div class="d-flex flex-column " [formGroup]="movieForm">
             <label for="title">Date de sortie</label>
-            <input type="date" id="date" name="date" [formControlName]="'releaseDate'"
-                   [value]="movie.releaseDate | date:'yyyy-MM-dd'"/>
+            <input type="date" id="date" name="date" [formControlName]="'releaseDate'"/>
         </div>
         <div class="d-flex flex-column " [formGroup]="movieForm">
             <label for="title">Synopsis</label>
-            <input type="text" id="synopsis" name="synopsis" [formControlName]="'synopsis'"
-                   [value]="movie.synopsis"/>
+            <input type="text" id="synopsis" name="synopsis" [formControlName]="'synopsis'"/>
         </div>
         <button class="btn btn-warning" (click)="editMovie()" [disabled]="!movieForm.valid">Modifier</button>
         <button class="btn btn-secondary goBack" routerLink="/movies">Retour</button>
