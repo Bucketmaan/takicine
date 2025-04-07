@@ -1,0 +1,23 @@
+<div>
+    <h1>Mon Profil</h1>
+    <button type="button" class="btn btn-outline-warning newFilm">Nouvel Avis</button>
+    <button type="button" class="btn btn-warning goBack" routerLink="/">Retour</button>
+    <div *ngIf="showWelcome">
+        <h1>Bienvenue jeune visiteur 👋</h1>
+        <div class="card p-3 shadow-sm mb-3">
+            <h3 class="mb-3">{{ user?.firstName }} {{ user?.lastName }}</h3>
+            <p><strong>Email :</strong> {{ user?.email }}</p>
+            <p><strong>Âge :</strong> {{ user?.age }} ans</p>
+            <p><strong>Points :</strong> {{ user?.points }}</p>
+        </div>
+
+    </div>
+
+    <div *ngIf="!showWelcome">
+        <h1>Contenu réservé aux utilisateurs connus</h1>
+        <p>Tu es déjà passé par ici 😎</p>
+    </div>
+
+</div>
+
+<app-footer></app-footer>

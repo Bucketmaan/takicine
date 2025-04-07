@@ -7,6 +7,7 @@ import {SignUpComponent} from "./sign-up/sign-up.component";
 import {SignInComponent} from "./sign-in/sign-in.component";
 import {PanelComponent} from "./admin/panel/panel.component";
 import {ChartsComponent} from "./admin/charts/charts.component";
+import {ProfileComponent} from "./profile/profile.component";
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
@@ -16,5 +17,6 @@ export const routes: Routes = [
     {path: 'sign-up', component: SignUpComponent},
     {path: 'sign-in', component: SignInComponent},
     {path: 'admin', component: PanelComponent},
-    {path: 'admin/charts', component: ChartsComponent}
+    {path: 'admin/charts', component: ChartsComponent},
+    { path: 'profile', component: ProfileComponent},
 ];
