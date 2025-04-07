@@ -32,7 +32,6 @@ export class EditMovieComponent {
         synopsis: ['', [Validators.required, Validators.minLength(31)]]
     });
 
-
     @Input({required: true}) set movieId(movieId: number) {
         this.moviesService.getMovieById(movieId)
             .pipe(takeUntilDestroyed(this.destroyRef))
