@@ -1,11 +1,14 @@
 <nav class="navbar navbar-light navbar-expand ps-5">
-    <a class="navbar-brand">{{title | titlecase}} </a>
-    <a  class="nav-item nav-link" routerLink="" [ngClass]="{ 'active-tab': isActive('/') }" >Accueil</a>
-    <a class="nav-item nav-link" routerLink="/movies"  [ngClass]="{ 'active-tab': isActive('/movies') }" >Gestion de films</a>
+    <a class="navbar-brand">{{ title | titlecase }} </a>
+    <a class="nav-item nav-link" routerLink="" [ngClass]="{ 'active-tab': isActive('/') }">Accueil</a>
+    <a class="nav-item nav-link" routerLink="/movies" [ngClass]="{ 'active-tab': isActive('/movies') }">Gestion de
+        films</a>
+    <a class="nav-item nav-link" routerLink="/admin" [ngClass]="{ 'active-tab': isActive('/admin') }">Panel admin</a>
     <button mat-button [matMenuTriggerFor]="menu" class="ms-auto"><i class="bi bi-person-circle"></i></button>
     <mat-menu #menu="matMenu">
-        <button mat-menu-item> <a class="nav-item nav-link ms-auto" routerLink="/sign-up" [ngClass]="{ 'active-tab': isActive('/sign-up') }">Nouveau Compte?</a></button>
+        <button mat-menu-item><a class="nav-item nav-link ms-auto" routerLink="/sign-up"
+                                 [ngClass]="{ 'active-tab': isActive('/sign-up') }">Nouveau Compte?</a></button>
         <button mat-menu-item>Item 2</button>
     </mat-menu>
-  </nav>
+</nav>
   
