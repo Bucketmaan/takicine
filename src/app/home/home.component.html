@@ -1,11 +1,22 @@
 <div class="container">
 <img src="https://allocine.takima.dev/assets/Horror%20on%20Halloween.png" alt="">
-<div class="movies">
-@for (movie of movies$ | async; track movie.id) {
-    <app-movie [movie]=movie></app-movie>
-  }
+
+<ng-container *ngIf="(movies$ | async) as movies">
+  <h1 class="section-title">A l'affiche</h1>
+  <p-carousel
+    [value]="movies ?? []"
+    [numVisible]="4"
+    [numScroll]="4"
+    [circular]="false"
+    [responsiveOptions]="responsiveOptions"
+  >
+    <ng-template let-movie pTemplate="item">
+      <app-movie [movie]="movie"></app-movie>
+    </ng-template>
+  </p-carousel>
+</ng-container>
 </div>
-</div>
+
 <div class="w-100">
     <app-footer></app-footer>
 </div>

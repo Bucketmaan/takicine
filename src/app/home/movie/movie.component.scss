@@ -8,5 +8,11 @@
 .card-text{
     background-color: white;
     padding: 2%;
+    height: 300px;
+    overflow-y: scroll;
 }
 
+.card{
+    max-width: 250px;
+    margin: 0;
+}
