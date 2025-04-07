@@ -1,0 +1,20 @@
+:host {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  img{
+    max-width: 85%;
+  }
+
+  .container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .movies{
+    display: flex;
+    flex-direction: row;
+  }

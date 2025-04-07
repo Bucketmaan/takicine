@@ -1,0 +1,6 @@
+<nav class="navbar navbar-light navbar-expand ps-5">
+    <a class="navbar-brand">{{title | titlecase}} </a>
+    <a  class="nav-item nav-link" routerLink="" [ngClass]="{ 'active-tab': isActive('/') }" >Accueil</a>
+    <a class="nav-item nav-link" routerLink="/movies"  [ngClass]="{ 'active-tab': isActive('/movies') }" >Gestion de films</a>
+  </nav>
+  
