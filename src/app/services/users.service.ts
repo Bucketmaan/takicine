@@ -16,4 +16,8 @@ export class UsersService {
   postUser(user: User): Observable<User> {
     return this.httpClient.post<User>(`${this.url}`, user);
   }
+
+  getUsers(): Observable<User[]> {
+    return this.httpClient.get<User[]>(this.url);
+}
 }
