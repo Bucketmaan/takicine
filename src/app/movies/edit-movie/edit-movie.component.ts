@@ -40,8 +40,11 @@ export class EditMovieComponent {
     public editMovie(): void {
         this.moviesService.editMovie(this.movie!)
             .pipe(takeUntilDestroyed(this.destroyRef))
-            .subscribe(() => this.router.navigate(['/movies']));
-        this.showSuccess();
+            .subscribe(() => {
+              this.showSuccess();
+              this.router.navigate(['/movies'])
+            });
+       
     }
   private showSuccess() {
     this.messageService.add({ severity: 'info', summary: ':)', detail: 'Film modifié!' });
