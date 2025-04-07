@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,aAAc;EACZ,WAAW,EAAE,MAAM;EACnB,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,IAAI;EACf,cAAc,EAAE,MAAM;;AAGxB,mBAAoB;EAClB,MAAM,EAAE,IAAI;;AAGd,aAAc;EACZ,WAAW,EAAE,MAAM;EACnB,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,IAAI;EACf,cAAc,EAAE,GAAG;;AAGrB,mBAAoB;EAClB,MAAM,EAAE,IAAI",
+"sources": ["panel.component.scss"],
+"names": [],
+"file": "panel.component.css"
+}

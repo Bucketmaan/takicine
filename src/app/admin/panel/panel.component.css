@@ -1,0 +1,19 @@
+.containerCol {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; }
+
+.containerCol > div {
+  margin: 1rem; }
+
+.containerRow {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row; }
+
+.containerRow > div {
+  margin: 1rem; }
+
+/*# sourceMappingURL=panel.component.css.map */
