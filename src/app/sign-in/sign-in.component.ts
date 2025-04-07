@@ -3,6 +3,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RouterLink} from "@angular/router";
 import {UsersService} from "../services/users.service";
 import {User} from "../models/user";
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-sign-in',
@@ -15,6 +16,7 @@ export class SignInComponent {
   public usersService = inject(UsersService);
   email = '';
   password = '';
+  private messageService = inject(MessageService);
 
   public SignIN(): void{
     this.usersService.getUsers().subscribe((users) => {
@@ -26,10 +28,14 @@ export class SignInComponent {
           {
             localStorage.setItem('user_id', JSON.stringify(element.id));
             console.log("oui");
+            this.showSuccess();
             break;
           }
           
         }
     })
+}
+private showSuccess() {
+  this.messageService.add({severity: 'success', summary: 'Connecté', detail: 'Vous êtes connecté!'});
 }
 }

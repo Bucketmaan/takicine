@@ -6,6 +6,7 @@ import {repeat} from "rxjs";
 import {NgIf} from "@angular/common";
 import {MoviesService} from "../services/movies.service";
 import {UsersService} from "../services/users.service";
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-sign-up',
@@ -22,7 +23,7 @@ import {UsersService} from "../services/users.service";
 export class SignUpComponent {
     public moviesService = inject(MoviesService);
     public usersService = inject(UsersService);
-
+    private messageService = inject(MessageService);
     user: User = {
         firstName: '',
         lastName: '',
@@ -38,6 +39,10 @@ export class SignUpComponent {
         this.usersService.postUser(this.user).subscribe((newUser) => {
             this.user.id = newUser.id;
             localStorage.setItem('user_id', JSON.stringify(this.user.id));
+            this.showSuccess();
         })
     }
+    private showSuccess() {
+        this.messageService.add({severity: 'success', summary: 'Inscrit', detail: 'Vous êtes inscrit!'});
+      }
 }
