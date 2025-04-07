@@ -4,6 +4,8 @@
     <a class="nav-item nav-link" routerLink="/movies" [ngClass]="{ 'active-tab': isActive('/movies') }">Gestion de
         films</a>
     <a class="nav-item nav-link" routerLink="/admin" [ngClass]="{ 'active-tab': isActive('/admin') }">Panel admin</a>
+    <a *ngIf="isActive('/admin') || isActive('/admin/charts')" class="nav-item nav-link" routerLink="/admin/charts"
+       [ngClass]="{'active-tab': isActive('/admin/charts')}">Graphiques</a>
     <button mat-button [matMenuTriggerFor]="menu" class="ms-auto"><i class="bi bi-person-circle"></i></button>
     <mat-menu #menu="matMenu">
         <button mat-menu-item><a class="nav-item nav-link ms-auto" routerLink="/sign-up"

@@ -1,5 +1,5 @@
 import { Component, inject, Input } from '@angular/core';
-import { TitleCasePipe } from '@angular/common';
+import {NgIf, TitleCasePipe} from '@angular/common';
 import { NgClass } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import {MatMenu, MatMenuItem, MatMenuModule, MatMenuTrigger} from '@angular/material/menu';
@@ -9,7 +9,7 @@ import {MatButton} from "@angular/material/button";
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [TitleCasePipe, NgClass, RouterLink, MatMenu, MatMenuTrigger, MatButton, MatMenuItem],
+    imports: [TitleCasePipe, NgClass, RouterLink, MatMenu, MatMenuTrigger, MatButton, MatMenuItem, NgIf],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
