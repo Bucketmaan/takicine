@@ -3,14 +3,14 @@
     <form #form="ngForm" name="form">        
         <div class="d-flex flex-column">
             <label for="title">Mail</label>
-            <input  required type="email" id="email" name="email" [(ngModel)]="user.email"/>
+            <input  required type="email" id="email" name="email" [(ngModel)]="email"/>
         </div>
         <div class="d-flex flex-column">
             <label for="title">Password</label>
-            <input  required type="password" id="pass" name="password" [(ngModel)]="user.password"/>
+            <input  required type="password" id="pass" name="password" [(ngModel)]="password"/>
         </div>
     </form>
-    <button type="submit" [disabled]="form.invalid" class="btn btn-warning"  routerLink="/">Connexion</button>
+    <button type="submit" [disabled]="form.invalid" class="btn btn-warning" (click)="SignIN()" routerLink="/">Connexion</button>
     <button class="btn btn-secondary gobackButton"><a class="goBack" routerLink="/">Retour</a></button>
 
 </div>
