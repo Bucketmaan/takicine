@@ -37,7 +37,7 @@ export class SignUpComponent {
     public SignUP(): void{
         this.usersService.postUser(this.user).subscribe((newUser) => {
             this.user.id = newUser.id;
-            localStorage.setItem('user', JSON.stringify(this.user));
+            localStorage.setItem('user_id', JSON.stringify(this.user.id));
         })
     }
 }
