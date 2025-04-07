@@ -31,7 +31,7 @@
             Les mots de passe ne correspondent pas.
         </div>
     </form>
-    <button type="submit" [disabled]="form.invalid || user.password !== ConfirmPassword" class="btn btn-warning"  routerLink="/">Créer</button>
+    <button  type="submit" [disabled]="form.invalid || user.password !== ConfirmPassword" class="btn btn-warning" (click)="SignUP()" routerLink="/"  >Créer</button>
     <button class="btn btn-secondary gobackButton"><a class="goBack" routerLink="/">Retour</a></button>
 
 </div>
