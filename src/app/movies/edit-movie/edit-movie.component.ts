@@ -5,7 +5,7 @@ import {Router, RouterLink} from '@angular/router';
 import {MoviesService} from '../../services/movies.service';
 import {DatePipe} from '@angular/common';
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
-
+import { MessageService } from 'primeng/api';
 @Component({
     selector: 'app-edit-movie',
     standalone: true,
@@ -18,7 +18,7 @@ export class EditMovieComponent {
     private destroyRef = inject(DestroyRef);
     private readonly router = inject(Router);
     public moviesService = inject(MoviesService);
-
+    private readonly messageService = inject(MessageService);
     movie: Movie | undefined = {
         title: '',
         director: '',
@@ -41,6 +41,10 @@ export class EditMovieComponent {
         this.moviesService.editMovie(this.movie!)
             .pipe(takeUntilDestroyed(this.destroyRef))
             .subscribe(() => this.router.navigate(['/movies']));
+        this.showSuccess();
     }
+  private showSuccess() {
+    this.messageService.add({ severity: 'info', summary: ':)', detail: 'Film modifié!' });
+  }
 }
 
