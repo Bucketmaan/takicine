@@ -5,10 +5,11 @@ import { Movie } from '../models/movie';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { MovieComponent } from './movie/movie.component';
 import { RouterLink } from '@angular/router';
+import {FooterComponent} from "../footer/footer.component";
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [AsyncPipe, DatePipe, MovieComponent, RouterLink],
+  imports: [AsyncPipe, DatePipe, MovieComponent, RouterLink, FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
