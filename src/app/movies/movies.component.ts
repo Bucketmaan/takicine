@@ -5,10 +5,11 @@ import { Movie } from '../models/movie';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
+import {FooterComponent} from "../footer/footer.component";
 @Component({
   selector: 'app-movies',
   standalone: true,
-  imports: [AsyncPipe, DatePipe, RouterLink],
+    imports: [AsyncPipe, DatePipe, RouterLink, FooterComponent],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.scss'
 })
